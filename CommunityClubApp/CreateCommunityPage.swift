@@ -53,7 +53,7 @@
 
 import SwiftUI
 
-// ObservableObject to hold the shared color settings
+ 
 class ColorSettings: ObservableObject {
     @Published var backgroundColor: Color = .white
 }
@@ -102,6 +102,7 @@ struct CreateCommunityPage: View {
                 .environmentObject(colorSettings)
         }
     }
+        
 }
 
 struct FirstView: View {
@@ -113,7 +114,7 @@ struct FirstView: View {
             Text("First View Content")
         }
     }
-}
+     }
 
 struct SecondView: View {
     @EnvironmentObject var colorSettings: ColorSettings
@@ -149,12 +150,17 @@ struct ThirdView: View {
                     TextField("Name of Club", text: $nameOfClub)
                     TextField("Interest", text: $interest)
                     TextField("Hobbies", text: $hobbies)
+                    
+                    
+                    
+                    
+                    
                 }
             }
             .navigationBarHidden(true)
         }
     }
-}
+     }
 
 struct ColorPickerView: View {
     @EnvironmentObject var colorSettings: ColorSettings
