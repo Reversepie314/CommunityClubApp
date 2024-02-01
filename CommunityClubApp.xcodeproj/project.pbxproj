@@ -12,6 +12,12 @@
 		3456684E2B63FD1100C5735F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3456684D2B63FD1100C5735F /* Item.swift */; };
 		345668502B63FD1200C5735F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3456684F2B63FD1200C5735F /* Assets.xcassets */; };
 		345668532B63FD1200C5735F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345668522B63FD1200C5735F /* Preview Assets.xcassets */; };
+		34AE35502B692D080038D506 /* Message module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE354F2B692D080038D506 /* Message module.swift */; };
+		34AE35532B6941230038D506 /* CloudKitUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE35522B6941230038D506 /* CloudKitUser.swift */; };
+		34AE35562B6956CE0038D506 /* CloudKitCrud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE35552B6956CE0038D506 /* CloudKitCrud.swift */; };
+		34AE355A2B6A81180038D506 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE35592B6A81180038D506 /* Title.swift */; };
+		34AE355C2B6A995B0038D506 /* CreateClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE355B2B6A995B0038D506 /* CreateClub.swift */; };
+		34AE355E2B6AA2100038D506 /* CreateCommunityPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE355D2B6AA2100038D506 /* CreateCommunityPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +27,13 @@
 		3456684D2B63FD1100C5735F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3456684F2B63FD1200C5735F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		345668522B63FD1200C5735F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		34AE354F2B692D080038D506 /* Message module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message module.swift"; sourceTree = "<group>"; };
+		34AE35522B6941230038D506 /* CloudKitUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitUser.swift; sourceTree = "<group>"; };
+		34AE35542B6941B00038D506 /* CommunityClubApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommunityClubApp.entitlements; sourceTree = "<group>"; };
+		34AE35552B6956CE0038D506 /* CloudKitCrud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitCrud.swift; sourceTree = "<group>"; };
+		34AE35592B6A81180038D506 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		34AE355B2B6A995B0038D506 /* CreateClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClub.swift; sourceTree = "<group>"; };
+		34AE355D2B6AA2100038D506 /* CreateCommunityPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommunityPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +66,16 @@
 		345668482B63FD1100C5735F /* CommunityClubApp */ = {
 			isa = PBXGroup;
 			children = (
+				34AE35542B6941B00038D506 /* CommunityClubApp.entitlements */,
 				345668492B63FD1100C5735F /* CommunityClubAppApp.swift */,
 				3456684B2B63FD1100C5735F /* ContentView.swift */,
 				3456684D2B63FD1100C5735F /* Item.swift */,
+				34AE354F2B692D080038D506 /* Message module.swift */,
+				34AE35592B6A81180038D506 /* Title.swift */,
+				34AE355D2B6AA2100038D506 /* CreateCommunityPage.swift */,
 				3456684F2B63FD1200C5735F /* Assets.xcassets */,
+				34AE355B2B6A995B0038D506 /* CreateClub.swift */,
+				34AE35512B6940F30038D506 /* CloudKitBoot */,
 				345668512B63FD1200C5735F /* Preview Content */,
 			);
 			path = CommunityClubApp;
@@ -68,6 +87,15 @@
 				345668522B63FD1200C5735F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		34AE35512B6940F30038D506 /* CloudKitBoot */ = {
+			isa = PBXGroup;
+			children = (
+				34AE35522B6941230038D506 /* CloudKitUser.swift */,
+				34AE35552B6956CE0038D506 /* CloudKitCrud.swift */,
+			);
+			path = CloudKitBoot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +168,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34AE35562B6956CE0038D506 /* CloudKitCrud.swift in Sources */,
 				3456684C2B63FD1100C5735F /* ContentView.swift in Sources */,
+				34AE355A2B6A81180038D506 /* Title.swift in Sources */,
+				34AE35532B6941230038D506 /* CloudKitUser.swift in Sources */,
+				34AE355E2B6AA2100038D506 /* CreateCommunityPage.swift in Sources */,
 				3456684E2B63FD1100C5735F /* Item.swift in Sources */,
+				34AE355C2B6A995B0038D506 /* CreateClub.swift in Sources */,
+				34AE35502B692D080038D506 /* Message module.swift in Sources */,
 				3456684A2B63FD1100C5735F /* CommunityClubAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,9 +307,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CommunityClubApp/CommunityClubApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CommunityClubApp/Preview Content\"";
+				DEVELOPMENT_TEAM = RQ93Y5FB92;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -301,9 +337,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CommunityClubApp/CommunityClubApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CommunityClubApp/Preview Content\"";
+				DEVELOPMENT_TEAM = RQ93Y5FB92;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
