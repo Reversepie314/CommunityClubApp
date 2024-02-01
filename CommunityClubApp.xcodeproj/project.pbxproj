@@ -18,6 +18,7 @@
 		34AE355A2B6A81180038D506 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE35592B6A81180038D506 /* Title.swift */; };
 		34AE355C2B6A995B0038D506 /* CreateClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE355B2B6A995B0038D506 /* CreateClub.swift */; };
 		34AE355E2B6AA2100038D506 /* CreateCommunityPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE355D2B6AA2100038D506 /* CreateCommunityPage.swift */; };
+		34AE35602B6BEBDC0038D506 /* CommunityClubCreateClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE355F2B6BEBDC0038D506 /* CommunityClubCreateClub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		34AE35592B6A81180038D506 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		34AE355B2B6A995B0038D506 /* CreateClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClub.swift; sourceTree = "<group>"; };
 		34AE355D2B6AA2100038D506 /* CreateCommunityPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommunityPage.swift; sourceTree = "<group>"; };
+		34AE355F2B6BEBDC0038D506 /* CommunityClubCreateClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityClubCreateClub.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				34AE354F2B692D080038D506 /* Message module.swift */,
 				34AE35592B6A81180038D506 /* Title.swift */,
 				34AE355D2B6AA2100038D506 /* CreateCommunityPage.swift */,
+				34AE355F2B6BEBDC0038D506 /* CommunityClubCreateClub.swift */,
 				3456684F2B63FD1200C5735F /* Assets.xcassets */,
 				34AE355B2B6A995B0038D506 /* CreateClub.swift */,
 				34AE35512B6940F30038D506 /* CloudKitBoot */,
@@ -175,6 +178,7 @@
 				34AE355E2B6AA2100038D506 /* CreateCommunityPage.swift in Sources */,
 				3456684E2B63FD1100C5735F /* Item.swift in Sources */,
 				34AE355C2B6A995B0038D506 /* CreateClub.swift in Sources */,
+				34AE35602B6BEBDC0038D506 /* CommunityClubCreateClub.swift in Sources */,
 				34AE35502B692D080038D506 /* Message module.swift in Sources */,
 				3456684A2B63FD1100C5735F /* CommunityClubAppApp.swift in Sources */,
 			);

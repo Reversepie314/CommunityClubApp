@@ -11,16 +11,16 @@ struct Title: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Image("TitleScreenImage") // Background image
+                Image("TitleScreenImage")
                     .resizable()
                     .scaledToFill()
-                    .edgesIgnoringSafeArea(.all) // Makes the image cover the full screen
+                    .edgesIgnoringSafeArea(.all)
 
                 VStack {
-                    Spacer() // Pushes content to the center
+                    Spacer()
                     Text("Community Club")
-                        .font(.largeTitle)
-                        .foregroundColor(.white) // Change text color for better visibility
+                        .font(.system(size: 50, weight: .medium, design: .rounded))                        /*.font(.largeTitle)*/
+                        .foregroundColor(.white)
                         .padding()
 
                     NavigationLink(destination: CreateCommunityPage()) {
