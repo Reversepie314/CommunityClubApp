@@ -40,7 +40,7 @@ struct CreateCommunityPage: View {
             Button(action: {
                 showingThirdViewSheet = true
             }) {
-                EmptyView()
+                Label("Profile", systemImage: "person.crop.circle.fill")
             }
             .tabItem {
                 Label("Profile", systemImage: "person.crop.circle.fill")
@@ -58,7 +58,7 @@ struct FirstView: View {
     @ObservedObject var userProfile: UserProfile
     @State private var searchTextChat = ""
     @State private var searchTextActiveChat = ""
-    @State private var chatImages = ["WayneImage", "WayneImage", "Wayne State Sports", "Sport"]
+    @State private var chatImages = ["WayneImage", "WayneImage", "Wayne State Sports", "Wayne State Help"]
     @State private var activeChatImages = ["Nature", "Travel", "Food", "Tech"]
 
     var filteredChatImages: [String] {
