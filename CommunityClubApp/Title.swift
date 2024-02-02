@@ -19,11 +19,11 @@ struct Title: View {
                 VStack {
                     Spacer()
                     Text("Community Club")
-                        .font(.system(size: 50, weight: .medium, design: .rounded))                        /*.font(.largeTitle)*/
+                        .font(.system(size: 50, weight: .medium, design: .rounded)).background(Color.black)                        /*.font(.largeTitle)*/
                         .foregroundColor(.white)
                         .padding()
 
-                    NavigationLink(destination: CreateCommunityPage()) {
+                    NavigationLink(destination: CreateProfilePage()) {
                         Text("Get Started")
                             .font(.headline)
                             .foregroundColor(.white)
