@@ -23,7 +23,7 @@ struct Title: View {
                         .foregroundColor(.white)
                         .padding()
 
-                    NavigationLink(destination: CreateProfilePage()) {
+                    NavigationLink(destination: SearchPage()) {
                         Text("Get Started")
                             .font(.headline)
                             .foregroundColor(.white)
