@@ -20,6 +20,8 @@
 		34AE35602B6BEBDC0038D506 /* CommunityClubCreateClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE355F2B6BEBDC0038D506 /* CommunityClubCreateClub.swift */; };
 		34E18C322B6D320B00E5456A /* CreateProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E18C312B6D320B00E5456A /* CreateProfilePage.swift */; };
 		34E18C342B6D33BF00E5456A /* NewAccountsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E18C332B6D33BF00E5456A /* NewAccountsScreen.swift */; };
+		573232B82B6D44810014EB79 /* SaveInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573232B72B6D44810014EB79 /* SaveInformation.swift */; };
+		573232BB2B6D49320014EB79 /* ClubCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573232BA2B6D49320014EB79 /* ClubCreation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		34AE355F2B6BEBDC0038D506 /* CommunityClubCreateClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityClubCreateClub.swift; sourceTree = "<group>"; };
 		34E18C312B6D320B00E5456A /* CreateProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfilePage.swift; sourceTree = "<group>"; };
 		34E18C332B6D33BF00E5456A /* NewAccountsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountsScreen.swift; sourceTree = "<group>"; };
+		573232B72B6D44810014EB79 /* SaveInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInformation.swift; sourceTree = "<group>"; };
+		573232BA2B6D49320014EB79 /* ClubCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCreation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 				34E18C312B6D320B00E5456A /* CreateProfilePage.swift */,
 				3456684F2B63FD1200C5735F /* Assets.xcassets */,
 				34AE355B2B6A995B0038D506 /* CreateClub.swift */,
+				573232BA2B6D49320014EB79 /* ClubCreation.swift */,
 				34AE35512B6940F30038D506 /* CloudKitBoot */,
 				345668512B63FD1200C5735F /* Preview Content */,
 			);
@@ -91,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				345668522B63FD1200C5735F /* Preview Assets.xcassets */,
+				573232B72B6D44810014EB79 /* SaveInformation.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -175,12 +181,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				34AE35562B6956CE0038D506 /* CloudKitCrud.swift in Sources */,
+				573232B82B6D44810014EB79 /* SaveInformation.swift in Sources */,
 				3456684C2B63FD1100C5735F /* ContentView.swift in Sources */,
 				34E18C322B6D320B00E5456A /* CreateProfilePage.swift in Sources */,
 				34AE355A2B6A81180038D506 /* Title.swift in Sources */,
 				34AE35532B6941230038D506 /* CloudKitUser.swift in Sources */,
 				34AE355E2B6AA2100038D506 /* CreateCommunityPage.swift in Sources */,
 				3456684E2B63FD1100C5735F /* Item.swift in Sources */,
+				573232BB2B6D49320014EB79 /* ClubCreation.swift in Sources */,
 				34AE355C2B6A995B0038D506 /* CreateClub.swift in Sources */,
 				34AE35602B6BEBDC0038D506 /* CommunityClubCreateClub.swift in Sources */,
 				34E18C342B6D33BF00E5456A /* NewAccountsScreen.swift in Sources */,

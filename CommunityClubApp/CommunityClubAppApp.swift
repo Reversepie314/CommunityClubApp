@@ -29,5 +29,6 @@ struct CommunityClubAppApp: App {
 //            ContentView()
         }
 //        .modelContainer(sharedModelContainer)
+        .modelContainer(for: ClubCreation.self)
     }
 }
