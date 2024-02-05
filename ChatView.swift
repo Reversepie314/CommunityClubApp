@@ -218,7 +218,7 @@ struct ChatView: View {
                 }.padding()
             }
             .navigationBarTitle("Chat", displayMode: .inline) // Title for the chat view
-            // Ensured there's no explicit back button which was removed as per your request
+             
         }
     }
 
