@@ -75,7 +75,7 @@ struct ContentView: View {
                 VStack {
                     Spacer()
                     Text("Community Club")
-                        .font(.system(size: 50, weight: .medium, design: .rounded)).background(Color.black)                        /*.font(.largeTitle)*/
+                        .font(.system(size: 50, weight: .medium, design: .rounded))//.background(Color.green)                        /*.font(.largeTitle)*/
                         .foregroundColor(.white)
                         .padding()
 

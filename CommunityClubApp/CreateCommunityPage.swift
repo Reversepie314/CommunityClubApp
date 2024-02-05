@@ -280,7 +280,7 @@ struct FirstView: View {
     @State private var searchTextChat = ""
     @State private var searchTextActiveChat = ""
     @State private var chatImages = ["Wayne State Connect", "Art Club", "Wayne State Sports", "Wayne State Help"]
-    @State private var activeChatImages = ["Nature", "Travel", "Food", "Tech"]
+    @State private var activeChatImages = ["Khalil", "Luke", "Trevon", "Jaysin"]
 
     var filteredChatImages: [String] {
         searchTextChat.isEmpty ? chatImages : chatImages.filter { $0.contains(searchTextChat) }
@@ -347,7 +347,7 @@ struct FirstView: View {
                                             .frame(width: 50, height: 50)
                                             .clipShape(Circle())
                                             .overlay(Circle().stroke(Color.green, lineWidth: 2))
-                                        Text("Active Chat \(imageName)")
+                                        Text(" \(imageName)")
                                         Spacer()
                                         Image(systemName: "plus.circle.fill")
                                             .foregroundColor(.blue)

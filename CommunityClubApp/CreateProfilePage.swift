@@ -49,7 +49,7 @@ struct CreateProfilePage: View {
                 NavigationLink(destination: TabBarView()) {
                     HStack {
                         Spacer()
-                        Text("Next")
+                        Text("Join Club")
                         Image(systemName: "arrow.right")
                         Spacer()
                     }
