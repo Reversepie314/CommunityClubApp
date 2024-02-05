@@ -279,7 +279,7 @@ struct FirstView: View {
     @ObservedObject var userProfile: UserProfile
     @State private var searchTextChat = ""
     @State private var searchTextActiveChat = ""
-    @State private var chatImages = ["WayneImage", "WayneImage", "Wayne State Sports", "Wayne State Help"]
+    @State private var chatImages = ["Wayne State Connect", "Art Club", "Wayne State Sports", "Wayne State Help"]
     @State private var activeChatImages = ["Nature", "Travel", "Food", "Tech"]
 
     var filteredChatImages: [String] {
@@ -341,7 +341,7 @@ struct FirstView: View {
                             ForEach(filteredActiveChatImages, id: \.self) { imageName in
                                 NavigationLink(destination: ChatView(/* parameters if needed */)) {
                                     HStack {
-                                        Image(imageName)
+                                        Image(systemName: "person.crop.circle")
                                             .resizable()
                                             .scaledToFit()
                                             .frame(width: 50, height: 50)
