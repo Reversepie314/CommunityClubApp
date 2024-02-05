@@ -46,7 +46,7 @@ struct CreateProfilePage: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.bottom, 20)
                 
-                NavigationLink(destination: CreateCommunityPage()) {
+                NavigationLink(destination: TabBarView()) {
                     HStack {
                         Spacer()
                         Text("Next")
@@ -61,6 +61,7 @@ struct CreateProfilePage: View {
             }
             .padding()
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
