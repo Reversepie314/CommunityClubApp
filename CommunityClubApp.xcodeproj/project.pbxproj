@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344D43752B71260C00E34641 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D43742B71260C00E34641 /* TabBarView.swift */; };
+		344D43772B712CDC00E34641 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D43762B712CDC00E34641 /* ChatView.swift */; };
 		3456684A2B63FD1100C5735F /* CommunityClubAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345668492B63FD1100C5735F /* CommunityClubAppApp.swift */; };
 		3456684C2B63FD1100C5735F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3456684B2B63FD1100C5735F /* ContentView.swift */; };
 		3456684E2B63FD1100C5735F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3456684D2B63FD1100C5735F /* Item.swift */; };
@@ -19,10 +21,12 @@
 		34AE355E2B6AA2100038D506 /* CreateCommunityPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE355D2B6AA2100038D506 /* CreateCommunityPage.swift */; };
 		34AE35602B6BEBDC0038D506 /* CommunityClubCreateClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE355F2B6BEBDC0038D506 /* CommunityClubCreateClub.swift */; };
 		34E18C322B6D320B00E5456A /* CreateProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E18C312B6D320B00E5456A /* CreateProfilePage.swift */; };
-		34E18C342B6D33BF00E5456A /* NewAccountsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E18C332B6D33BF00E5456A /* NewAccountsScreen.swift */; };
+		34E18C342B6D33BF00E5456A /* SearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E18C332B6D33BF00E5456A /* SearchPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		344D43742B71260C00E34641 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		344D43762B712CDC00E34641 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		345668462B63FD1100C5735F /* CommunityClubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityClubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		345668492B63FD1100C5735F /* CommunityClubAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityClubAppApp.swift; sourceTree = "<group>"; };
 		3456684B2B63FD1100C5735F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,7 +41,7 @@
 		34AE355D2B6AA2100038D506 /* CreateCommunityPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCommunityPage.swift; sourceTree = "<group>"; };
 		34AE355F2B6BEBDC0038D506 /* CommunityClubCreateClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityClubCreateClub.swift; sourceTree = "<group>"; };
 		34E18C312B6D320B00E5456A /* CreateProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfilePage.swift; sourceTree = "<group>"; };
-		34E18C332B6D33BF00E5456A /* NewAccountsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountsScreen.swift; sourceTree = "<group>"; };
+		34E18C332B6D33BF00E5456A /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		3456683D2B63FD1100C5735F = {
 			isa = PBXGroup;
 			children = (
+				344D43762B712CDC00E34641 /* ChatView.swift */,
 				345668482B63FD1100C5735F /* CommunityClubApp */,
 				345668472B63FD1100C5735F /* Products */,
 			);
@@ -77,7 +82,8 @@
 				34AE35592B6A81180038D506 /* Title.swift */,
 				34AE355D2B6AA2100038D506 /* CreateCommunityPage.swift */,
 				34AE355F2B6BEBDC0038D506 /* CommunityClubCreateClub.swift */,
-				34E18C332B6D33BF00E5456A /* NewAccountsScreen.swift */,
+				344D43742B71260C00E34641 /* TabBarView.swift */,
+				34E18C332B6D33BF00E5456A /* SearchPage.swift */,
 				34E18C312B6D320B00E5456A /* CreateProfilePage.swift */,
 				3456684F2B63FD1200C5735F /* Assets.xcassets */,
 				34AE355B2B6A995B0038D506 /* CreateClub.swift */,
@@ -180,10 +186,12 @@
 				34AE355A2B6A81180038D506 /* Title.swift in Sources */,
 				34AE35532B6941230038D506 /* CloudKitUser.swift in Sources */,
 				34AE355E2B6AA2100038D506 /* CreateCommunityPage.swift in Sources */,
+				344D43772B712CDC00E34641 /* ChatView.swift in Sources */,
 				3456684E2B63FD1100C5735F /* Item.swift in Sources */,
 				34AE355C2B6A995B0038D506 /* CreateClub.swift in Sources */,
 				34AE35602B6BEBDC0038D506 /* CommunityClubCreateClub.swift in Sources */,
-				34E18C342B6D33BF00E5456A /* NewAccountsScreen.swift in Sources */,
+				34E18C342B6D33BF00E5456A /* SearchPage.swift in Sources */,
+				344D43752B71260C00E34641 /* TabBarView.swift in Sources */,
 				3456684A2B63FD1100C5735F /* CommunityClubAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
