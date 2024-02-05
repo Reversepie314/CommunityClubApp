@@ -142,8 +142,8 @@ struct ImageTextPair: Identifiable, Hashable {
 struct SearchPage: View {
     @State private var searchText = ""
     @State private var allImageTextPairs = [
-        ImageTextPair(imageName: "WayneImage", text: "Wayne Connect"),
-        ImageTextPair(imageName: "ArtClub", text: "Art Club"),
+        ImageTextPair(imageName: "Wayne State Connect", text: "Wayne Connect"),
+        ImageTextPair(imageName: "Art Club", text: "Art Club"),
         ImageTextPair(imageName: "Photography", text: "Photography"),
         ImageTextPair(imageName: "Wayne State Sports", text: "Sports Club")
     ]
