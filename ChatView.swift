@@ -46,7 +46,7 @@ struct ChatView: View {
         messages.append(newMessage) // Add the new message to the list
         messageText = "" // Clear the input field after sending
         
-        receiveRandomResponse() // Simulate receiving a random response
+        receiveRandomResponse()
     }
     
      
