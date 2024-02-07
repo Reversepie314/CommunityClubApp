@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @StateObject var colorSettings = ColorSettings()
+  //  @StateObject var colorSettings = ColorSettings()
     @StateObject var userProfile = UserProfile()
     @State private var selectedTab = 1
     @State private var showingThirdViewSheet = false
@@ -17,22 +17,22 @@ struct TabBarView: View {
         NavigationStack {
             TabView(selection: $selectedTab) {
                 
-                FirstView(userProfile: userProfile).environmentObject(colorSettings)
+                FirstView(userProfile: userProfile)//.environmentObject(colorSettings)
                     .tabItem {
                         Label("Chats", systemImage: "message.fill")
                     }
                     .tag(1)
                 
-                SecondView().environmentObject(colorSettings)
+                SecondView()//.environmentObject(colorSettings)
                     .tabItem {
                         Label("Add Note", systemImage: "plus.circle.fill")
                     }
                     .tag(2)
                 
-                ColorPickerView().environmentObject(colorSettings)
-                    .tabItem {
-                        Label("Settings", systemImage: "slider.horizontal.3")
-                    }
+//                ColorPickerView().environmentObject(colorSettings)
+//                    .tabItem {
+//                        Label("Settings", systemImage: "slider.horizontal.3")
+//                    }
                     .tag(3)
                 
                 Button(action: {
