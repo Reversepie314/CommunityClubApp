@@ -26,7 +26,7 @@ struct CommunityClubAppApp: App {
     var body: some Scene {
         WindowGroup {
        //     CloudKitUser()
-//            ContentView()
+            ContentView()
         }
 //        .modelContainer(sharedModelContainer)
     }

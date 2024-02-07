@@ -40,6 +40,7 @@
 		34AE355F2B6BEBDC0038D506 /* CommunityClubCreateClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityClubCreateClub.swift; sourceTree = "<group>"; };
 		34E18C312B6D320B00E5456A /* CreateProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfilePage.swift; sourceTree = "<group>"; };
 		34E18C332B6D33BF00E5456A /* SearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPage.swift; sourceTree = "<group>"; };
+		34F7B3252B72694000CA2FBF /* CommunityClubAppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommunityClubAppDebug.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +74,7 @@
 		345668482B63FD1100C5735F /* CommunityClubApp */ = {
 			isa = PBXGroup;
 			children = (
+				34F7B3252B72694000CA2FBF /* CommunityClubAppDebug.entitlements */,
 				34AE35542B6941B00038D506 /* CommunityClubApp.entitlements */,
 				345668492B63FD1100C5735F /* CommunityClubAppApp.swift */,
 				3456684B2B63FD1100C5735F /* ContentView.swift */,
@@ -319,7 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = CommunityClubApp/CommunityClubApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CommunityClubApp/CommunityClubAppDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CommunityClubApp/Preview Content\"";
@@ -335,8 +337,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = msu.CommunityClubApp;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CommunityClubApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -365,7 +367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = msu.CommunityClubApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

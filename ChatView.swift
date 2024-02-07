@@ -1,26 +1,26 @@
  import SwiftUI
 
-// Define a model for chat messages
+ 
 struct ChatMessage: Identifiable {
-    var id = UUID() // Unique identifier for each message
-    let content: String // The text content of the message
-    let timestamp: Date // The timestamp when the message was "sent"
+    var id = UUID()
+    let content: String
+    let timestamp: Date
 }
 
-// SwiftUI View for displaying and sending chat messages
+ 
 struct ChatView: View {
-    @Environment(\.presentationMode) var presentationMode // For dismissing the view
-    @State private var messageText = "" // The current input from the user
-    @State private var messages: [ChatMessage] = [] // The list of messages in the chat
+    @Environment(\.presentationMode) var presentationMode
+    @State private var messageText = ""
+    @State private var messages: [ChatMessage] = []
 
     var body: some View {
         NavigationView {
             VStack {
                 List(messages) { message in
                     VStack(alignment: .leading) {
-                        Text(message.content) // Display the message content
+                        Text(message.content)
                             .padding()
-                        Text("\(message.timestamp, formatter: itemFormatter)") // Display the formatted timestamp
+                        Text("\(message.timestamp, formatter: itemFormatter)")
                             .font(.footnote)
                             .foregroundColor(.gray)
                     }
@@ -30,7 +30,7 @@ struct ChatView: View {
                     TextField("Type a message...", text: $messageText) // Input field for new messages
                         .textFieldStyle(RoundedBorderTextFieldStyle())
 
-                    Button("Send") { // Button to "send" a message
+                    Button("Send") {  
                         sendMessage(content: messageText)
                     }
                 }.padding()
@@ -40,7 +40,7 @@ struct ChatView: View {
         }
     }
 
-    // Function to send a message and simulate receiving a random response
+    
     private func sendMessage(content: String) {
         let newMessage = ChatMessage(content: content, timestamp: Date()) // Create a new message instance
         messages.append(newMessage) // Add the new message to the list
@@ -49,25 +49,26 @@ struct ChatView: View {
         receiveRandomResponse() // Simulate receiving a random response
     }
     
-    // Function to simulate receiving a random response without shuffling
+     
     private func receiveRandomResponse() {
         let responses = [
-            "Hi, How are you?",
-            "Thank You for your assistance",
+            "Hi, How can I help you?",
+            "Thank You for your assistance.",
             "I'm doing okay, just a bit tired. How are you holding up?",
             "I appreciate the help.",
             "Let's have a study session.",
             "Let's form a club.",
             "Okay",
-            "Have a nice day."
+            "Have a nice day.",
+            "Wayne State is awesome!"
             
         ]
         
         if let randomResponse = responses.randomElement() {
-            let responseMessage = ChatMessage(content: randomResponse, timestamp: Date().addingTimeInterval(1)) // Create a response message
+            let responseMessage = ChatMessage(content: randomResponse, timestamp: Date().addingTimeInterval(1))
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.messages.append(responseMessage) // Add the random response to the messages list
+                self.messages.append(responseMessage)
             }
         }
     }
