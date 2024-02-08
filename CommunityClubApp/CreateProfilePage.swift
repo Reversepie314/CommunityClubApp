@@ -177,11 +177,11 @@ struct CreateProfilePage: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.bottom, 20)
                         
-                        TextField("Enter your primary interest", text: $primaryInterest)
+                        TextField("What do you do in your spare time?", text: $primaryInterest)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.bottom, 20)
                         
-                        TextField("Share something interesting", text: $funFacts)
+                        TextField("Share something interesting about you", text: $funFacts)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.bottom, 20)
                     }
