@@ -7,30 +7,30 @@
 
 import SwiftUI
 
-struct showClubView: View {
-@EnvironmentObject var clubManagerVM: clubManager
-    var body: some View {
-        
-        
-        
-        NavigationStack {
-            NavigationLink("Create Profile", destination: {})
-            
-            
-            ForEach(clubManagerVM.clubs, id: \.clubID) {
-                
-                club in
-                
-                Text("\(club.name)")
-                Image("\(club.Image)")
-                
-            }
-            
-        }
-    }
-}
+//struct showClubView: View {
+//@EnvironmentObject var clubManagerVM: clubManager
+//    var body: some View {
+//        
+//        
+//        
+//        NavigationStack {
+//            NavigationLink("Create Profile", destination: {})
+//            
+//            
+//            ForEach(clubManagerVM.clubs, id: \.clubID) {
+//                
+//                club in
+//                
+//                Text("\(club.name)")
+//                Image("\(club.Image)")
+//                
+//            }
+//            
+//        }
+//    }
+//}
 
-#Preview {
-    showClubView()
-        .environmentObject(clubManager())
-}
+//#Preview {
+//    showClubView()
+//        .environmentObject(clubManager())
+//}

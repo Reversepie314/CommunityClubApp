@@ -156,7 +156,7 @@ struct CreateProfilePage: View {
         NavigationView {
               // Wrap content in ScrollView
                 VStack(alignment: .leading, spacing: 30) {
-                    Text("Add Picture")
+                    Text("Create Group")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                     

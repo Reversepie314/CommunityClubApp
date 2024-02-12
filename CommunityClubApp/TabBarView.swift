@@ -29,31 +29,31 @@ struct TabBarView: View {
                     }
                     .tag(2)
                 
-//                ColorPickerView().environmentObject(colorSettings)
-//                    .tabItem {
-//                        Label("Settings", systemImage: "slider.horizontal.3")
-//                    }
+                ThirdView()
+                    .tabItem {
+                        Label("Profile", systemImage: "person.crop.circle.fill")
+                    }
                     .tag(3)
                 
-                Button(action: {
-                    showingThirdViewSheet = true
-                }) {
-                    Label("Profile", systemImage: "person.crop.circle.fill")
-                }
-                .tabItem {
-                    Label("Profile", systemImage: "person.crop.circle.fill")
-                }
-                .tag(4)
+//                Button(action: {
+//                    showingThirdViewSheet = true
+//                }) {
+//                    Label("Profile", systemImage: "person.crop.circle.fill")
+//                }
+//                .tabItem {
+//                    Label("Profile", systemImage: "person.crop.circle.fill")
+//                }
+//                .tag(4)
             }
-            .sheet(isPresented: $showingThirdViewSheet) {
-                ThirdView(isPresented: $showingThirdViewSheet)
+//            .sheet(isPresented: $showingThirdViewSheet) {
+//                ThirdView(isPresented: $showingThirdViewSheet)
                     
             }
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
+//        .navigationBarHidden(true)
+//        .navigationBarBackButtonHidden(true)
     }
-}
+
 #Preview {
     TabBarView()
 }

@@ -7,34 +7,32 @@
 
 import SwiftUI
 
-struct createdStudentView : View {
+struct CreateStudentView : View {
      
-    @EnvironmentObject var clubManagerVM: clubManager
+//    @EnvironmentObject var clubManagerVM: clubManager
+    @State private var clubName = ""
+    @State private var clubInterests = ""
+    @State private var clubFacts = ""
     var body: some View {
         
         VStack{
             
             
-            TextField("ClubName:", text: $clubManagerVM.createdStudent.name)
-            TextField("ClubInterests:", text: $clubManagerVM.createdStudent.interests)
-            TextField("Interesting Fact:", text: $clubManagerVM.createdStudent.interestInNote)
+            Text("Create Group")
+//            Image(systemName:
+            
+            TextField("ClubName:", text: $clubName)
+            TextField("ClubInterests:", text: $clubInterests)
+            TextField("Interesting Fact:", text: $clubFacts)
     
             
             
             
-            Button(action: {
+            Button {
                 
-                
-                clubManagerVM.addStudentToClub()
-             
-                
-                
-                 
-                
-                
-            }, label: {
+            } label: {
                 Text("Add Student")
-            })
+            }
             
              
             
@@ -48,7 +46,7 @@ struct createdStudentView : View {
 
 
 #Preview {
-    createdStudentView()
+    CreateStudentView()
          
         .environmentObject(clubManager())
     

@@ -220,6 +220,205 @@
 // 
 
 // Added
+//import SwiftUI
+//
+//class UserProfile: ObservableObject {
+//    @Published var name: String = ""
+//    @Published var primaryInterest: String = ""
+//    @Published var secondaryInterest: String = ""
+//    @Published var otherInfo: String = ""
+//}
+//
+//struct CreateCommunityPage: View {
+//    @StateObject var userProfile = UserProfile()
+//    @State private var selectedTab = 1
+//    @State private var showingThirdViewSheet = false
+//
+//    var body: some View {
+//        TabView(selection: $selectedTab) {
+//            FirstView(userProfile: userProfile)
+//                .tabItem {
+//                    Label("Chats", systemImage: "message.fill")
+//                }
+//                .tag(1)
+//
+//            SecondView()
+//                .tabItem {
+//                    Label("Add Note", systemImage: "plus.circle.fill")
+//                }
+//                .tag(2)
+//
+//            Button(action: {
+//                showingThirdViewSheet = true
+//            }) {
+//                Label("Profile", systemImage: "person.crop.circle.fill")
+//            }
+//            .tabItem {
+//                Label("Profile", systemImage: "person.crop.circle.fill")
+//            }
+//            .tag(4)
+//        }
+//        .sheet(isPresented: $showingThirdViewSheet) {
+//            ThirdView(isPresented: $showingThirdViewSheet)
+//        }
+//    }
+//}
+//
+//struct FirstView: View {
+//    @ObservedObject var userProfile: UserProfile
+//    @State private var searchTextChat = ""
+//    @State private var searchTextActiveChat = ""
+//    @State private var chatImages = ["Wayne State Connect", "Art Club", "Wayne State Sports", "Wayne State Help"]
+//    @State private var activeChatImages = ["Squirrel Watching Club", "Late Night Movie Club ", "Helping Freshman Club", "Bible Study Club"]
+//
+//    var filteredChatImages: [String] {
+//        searchTextChat.isEmpty ? chatImages : chatImages.filter { $0.contains(searchTextChat) }
+//    }
+//
+//    var filteredActiveChatImages: [String] {
+//        searchTextActiveChat.isEmpty ? activeChatImages : activeChatImages.filter { $0.contains(searchTextActiveChat) }
+//    }
+//
+//    var body: some View {
+//        NavigationView {
+//            VStack {
+//                HStack {
+//                    TextField("Search Chats", text: $searchTextChat)
+//                        .padding()
+//                        .background(Color(.systemGray6))
+//                        .cornerRadius(10)
+//                        .padding()
+//                    Image(systemName: "plus")
+//                        .padding(9)
+//                    
+//                    
+//                }
+//
+//                HStack {
+//                    Text("Chat")
+//                        .font(.system(size: 20, weight: .medium, design: .default))
+//                        .padding(.leading)
+//                    Spacer()
+//                }
+//
+//                ScrollView(.vertical, showsIndicators: false) {
+//                    VStack {
+//                        ForEach(filteredChatImages, id: \.self) { imageName in
+//                            NavigationLink(destination: ChatView(/* parameters if needed */)) {
+//                                HStack {
+//                                    Image(imageName)
+//                                        .resizable()
+//                                        .scaledToFit()
+//                                        .frame(width: 50, height: 50)
+//                                        .clipShape(Circle())
+//                                        .overlay(Circle().stroke(Color.blue, lineWidth: 2))
+//                                    Text(imageName)
+//                                    Spacer()
+//                                }
+//                                .padding(.top, 1)
+//                                .navigationBarTitle("")
+//                            }
+//                        }
+//                    }
+//                }
+//
+//                HStack {
+//                    Text("Active Chats")
+//                        .font(.system(size: 20, weight: .medium, design: .default))
+//                        .padding(.leading)
+//                    Spacer()
+//                }
+//
+//                ScrollView(.vertical, showsIndicators: false) {
+//                    VStack {
+//                        ForEach(filteredActiveChatImages, id: \.self) { imageName in
+//                            NavigationLink(destination: ChatView(/* parameters if needed */)) {
+//                                HStack {
+//                                    Image(systemName: "person.crop.circle")
+//                                        .resizable()
+//                                        .scaledToFit()
+//                                        .frame(width: 50, height: 50)
+//                                        .clipShape(Circle())
+//                                        .overlay(Circle().stroke(Color.green, lineWidth: 2))
+//                                    Text(" \(imageName)")
+//                                    Spacer()
+//                                    Image(systemName: "plus.circle.fill")
+//                                        .foregroundColor(.blue)
+//                                }
+//                                .padding(.horizontal)
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+//
+//struct SecondView: View {
+//
+//    var body: some View {
+//        ZStack {
+//            Text("Second View Content")
+//        }
+//    }
+//}
+//
+//struct ThirdView: View {
+//    @Binding var isPresented: Bool
+//
+//    var body: some View {
+//        NavigationStack {
+//            VStack {
+//                HStack {
+//                    Button(action: {
+//                        isPresented = false // Dismiss the sheet
+//                    }) {
+//                        Image(systemName: "x.circle.fill")
+//                            .foregroundColor(Color.gray)
+//                    }
+//                    Spacer()
+//                    Text("Profile")
+//                        .font(.headline)
+//                    Spacer()
+//                }
+//                .padding()
+//
+//                Divider()
+//
+//                VStack(alignment: .leading, spacing: 15) {
+//                    Image(systemName: "person.crop.circle.fill") // Replace with actual profile image
+//                        .resizable()
+//                        .scaledToFit()
+//                        .frame(width: 100, height: 100)
+//                        .clipShape(Circle())
+//                        .padding()
+//
+//                    TextField("Name", text: .constant(""))
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    TextField("Primary Interest", text: .constant(""))
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    TextField("Secondary Interest", text: .constant(""))
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    TextField("Other Info", text: .constant(""))
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                }
+//                .padding()
+//
+//                Spacer()
+//            }
+//        }
+//        .navigationBarBackButtonHidden(true)
+//    }
+//}
+//
+//struct CreateCommunityPage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CreateCommunityPage()
+//    }
+//}
+
+ 
 import SwiftUI
 
 class UserProfile: ObservableObject {
@@ -232,7 +431,6 @@ class UserProfile: ObservableObject {
 struct CreateCommunityPage: View {
     @StateObject var userProfile = UserProfile()
     @State private var selectedTab = 1
-    @State private var showingThirdViewSheet = false
 
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -248,45 +446,51 @@ struct CreateCommunityPage: View {
                 }
                 .tag(2)
 
-            Button(action: {
-                showingThirdViewSheet = true
-            }) {
-                Label("Profile", systemImage: "person.crop.circle.fill")
-            }
-            .tabItem {
-                Label("Profile", systemImage: "person.crop.circle.fill")
-            }
-            .tag(4)
-        }
-        .sheet(isPresented: $showingThirdViewSheet) {
-            ThirdView(isPresented: $showingThirdViewSheet)
+            ThirdView()
+                .tabItem {
+                    Label("Profile", systemImage: "person.crop.circle.fill")
+                }
+                .tag(3)
         }
     }
 }
 
 struct FirstView: View {
+    @State var clubs = Club.all
     @ObservedObject var userProfile: UserProfile
     @State private var searchTextChat = ""
     @State private var searchTextActiveChat = ""
-    @State private var chatImages = ["Wayne State Connect", "Art Club", "Wayne State Sports", "Wayne State Help"]
-    @State private var activeChatImages = ["Squirrel Watching Club", "Late Night Movie Club ", "Helping Freshman Club", "Bible Study Club"]
+//    @State private var chatImages = ["Wayne State Connect", "Art Club", "Wayne State Sports", "Wayne State Help", "Wayne State Track", "Wayne State Swim","Wayne State Football"]
+    @State private var activeChatImages = ["Squirrel Watching Club", "Late Night Movie Club", "Helping Freshman Club", "Bible Study Club"]
 
-    var filteredChatImages: [String] {
-        searchTextChat.isEmpty ? chatImages : chatImages.filter { $0.contains(searchTextChat) }
+//    var filteredChatImages: [String] {
+//        searchTextChat.isEmpty ? chatImages : chatImages.filter { $0.contains(searchTextChat) }
+//    }
+    var filteredClubs: [Club] {
+        searchTextActiveChat.isEmpty ? clubs : clubs.filter { $0.name.contains(searchTextActiveChat) }
     }
 
     var filteredActiveChatImages: [String] {
         searchTextActiveChat.isEmpty ? activeChatImages : activeChatImages.filter { $0.contains(searchTextActiveChat) }
     }
+    @State private var showCreateStudentPage = false
 
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Search Chats", text: $searchTextChat)
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(10)
-                    .padding()
+                HStack {
+                    TextField("Search Chats", text: $searchTextChat)
+                        .padding()
+                        .background(Color(.systemGray6))
+                        .cornerRadius(10)
+                        .padding()
+                    Button {
+                        showCreateStudentPage = true
+                    } label: {
+                        Image(systemName: "plus")
+                            .padding(9)
+                    }
+                }
 
                 HStack {
                     Text("Chat")
@@ -297,16 +501,16 @@ struct FirstView: View {
 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
-                        ForEach(filteredChatImages, id: \.self) { imageName in
+                        ForEach(filteredClubs) { club in
                             NavigationLink(destination: ChatView(/* parameters if needed */)) {
                                 HStack {
-                                    Image(imageName)
+                                    Image(club.imageName) // This requires actual images named accordingly in your assets
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 50, height: 50)
                                         .clipShape(Circle())
                                         .overlay(Circle().stroke(Color.blue, lineWidth: 2))
-                                    Text(imageName)
+                                    Text(club.name)
                                     Spacer()
                                 }
                                 .padding(.top, 1)
@@ -345,12 +549,14 @@ struct FirstView: View {
                     }
                 }
             }
+            .sheet(isPresented: $showCreateStudentPage) {
+                CreateStudentView()
+            }
         }
     }
 }
 
 struct SecondView: View {
-
     var body: some View {
         ZStack {
             Text("Second View Content")
@@ -359,57 +565,89 @@ struct SecondView: View {
 }
 
 struct ThirdView: View {
-    @Binding var isPresented: Bool
+    @EnvironmentObject var clubManagerVM: clubManager
 
+    
     var body: some View {
-        NavigationStack {
-            VStack {
-                HStack {
-                    Button(action: {
-                        isPresented = false // Dismiss the sheet
-                    }) {
-                        Image(systemName: "x.circle.fill")
-                            .foregroundColor(Color.gray)
-                    }
-                    Spacer()
-                    Text("Profile")
-                        .font(.headline)
-                    Spacer()
-                }
-                .padding()
-
-                Divider()
-
-                VStack(alignment: .leading, spacing: 15) {
-                    Image(systemName: "person.crop.circle.fill") // Replace with actual profile image
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
-                        .padding()
-
-                    TextField("Name", text: .constant(""))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Primary Interest", text: .constant(""))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Secondary Interest", text: .constant(""))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Other Info", text: .constant(""))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                .padding()
-
+        VStack {
+            HStack {
+                Spacer()
+                Text("Profile")
+                    .font(.headline)
                 Spacer()
             }
+            .padding()
+
+            Divider()
+
+            VStack(alignment: .leading, spacing: 15) {
+                Image(systemName: "person.crop.circle.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                    .clipShape(Circle())
+                    .padding()
+
+                TextField("Name", text: .constant(""))
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Primary Interest", text: .constant(""))
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Secondary Interest", text: .constant(""))
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                TextField("Other Info", text: .constant(""))
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                
+                
+                VStack{
+                    
+                    
+                    TextField("ClubName:", text: $clubManagerVM.createdStudent.name)
+                    TextField("ClubInterests:", text: $clubManagerVM.createdStudent.interests)
+                    TextField("Interesting Fact:", text: $clubManagerVM.createdStudent.interestInNote)
+            
+                    
+                    
+                    
+                    Button(action: {
+                        
+                        
+                        clubManagerVM.addStudentToClub()
+                     
+                        
+                        
+                         
+                        
+                        
+                    }, label: {
+                        Text("Add Student")
+                    })
+                    
+                     
+                    
+                    
+                    
+                }
+                
+                
+                
+                
+                
+                
+                
+            }
+            .padding()
+
+             
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct CreateCommunityPage_Previews: PreviewProvider {
     static var previews: some View {
         CreateCommunityPage()
+        
+        .environmentObject(clubManager())
+
     }
 }
-
- 

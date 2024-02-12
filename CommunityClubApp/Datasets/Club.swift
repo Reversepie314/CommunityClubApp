@@ -7,13 +7,12 @@
 
 import Foundation
 
-struct Club {
-    
-    
-    var Image:String
-    var name:String
-    var DOE:Date
-    var clubID:Int
+struct Club: Identifiable {
+    var id = UUID()
+    var imageName: String
+    var name: String
+    static let all: [Club] = ["Wayne State Connect", "Art Club", "Wayne State Sports", "Wayne State Help", "Wayne State Track", "Wayne State Swim","Wayne State Football"]
+            .map { Club(imageName: $0, name: $0) }
 }
 
 
@@ -32,15 +31,15 @@ class clubManager:ObservableObject {
     
     @Published var clubs:[Club] = []
     @Published var students:[Student] = []
-    @Published var createdClub:Club = Club(Image: "", name: "", DOE: Date(), clubID:Int.random(in: 1...1000))
+//    @Published var createdClub:Club = Club(Image: "", name: "", DOE: Date(), clubID:Int.random(in: 1...1000))
 @Published var createdStudent: Student = Student(name: "", interests: "", interestInNote: "", Image: "Photography", clubRef:0)
 
     
     
-    func addClub() {
-        clubs.append(createdClub)
-        createdClub = Club(Image: "", name: "", DOE: Date(), clubID: 0)
-    }
+//    func addClub() {
+//        clubs.append(createdClub)
+//        createdClub = Club(Image: "", name: "", DOE: Date(), clubID: 0)
+//    }
     
     
     func deleteClub() {
