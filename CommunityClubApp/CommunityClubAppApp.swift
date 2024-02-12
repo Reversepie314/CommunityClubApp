@@ -10,6 +10,9 @@ import SwiftData
 
 @main
 struct CommunityClubAppApp: App {
+   // @StateObject var studentManagerVM = StudentManager()
+    @StateObject var clubManagerVM = clubManager()
+     
 //    var sharedModelContainer: ModelContainer = {
 //        let schema = Schema([
 //            Item.self,
@@ -26,7 +29,11 @@ struct CommunityClubAppApp: App {
     var body: some Scene {
         WindowGroup {
        //     CloudKitUser()
+           // createClub()
             ContentView()
+               // .environmentObject(studentManagerVM)
+                .environmentObject(clubManagerVM)
+                
         }
 //        .modelContainer(sharedModelContainer)
     }

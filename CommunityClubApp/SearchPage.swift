@@ -57,7 +57,7 @@ struct SearchPage: View {
         let gridItems = Array(repeating: GridItem(.flexible(), spacing: 20), count: 2)
         return LazyVGrid(columns: gridItems, spacing: 20) {
             ForEach(filteredImageTextPairs) { pair in
-                NavigationLink(destination: CreateProfilePage()) {
+                NavigationLink(destination: CreateCommunityPage()) {
                     VStack {
                         Image(pair.imageName)
                             .resizable()
