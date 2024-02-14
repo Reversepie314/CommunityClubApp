@@ -87,6 +87,7 @@ struct CreateStudentView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.bottom, 20)
+            Divider()
 
             VStack {
                 profileImage
@@ -121,7 +122,12 @@ struct CreateStudentView: View {
                 dismiss()
             } label: {
                 Text("Create Club")
+                    .foregroundColor(.white)
+                    .frame(width: 200, height: 50)
+                    .background(Color.blue)
+                    .cornerRadius(10)
             }
+            
         }
     }
 
