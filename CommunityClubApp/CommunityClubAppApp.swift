@@ -28,6 +28,14 @@ struct CommunityClubAppApp: App {
 
     var body: some Scene {
         WindowGroup {
+             
+                       CreateProfileView()
+                           .environmentObject(UserProfile()) // Initialize UserProfile here
+                   
+            
+            
+            
+            
        //     CloudKitUser()
            // createClub()
             ContentView()
@@ -37,4 +45,14 @@ struct CommunityClubAppApp: App {
         }
 //        .modelContainer(sharedModelContainer)
     }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

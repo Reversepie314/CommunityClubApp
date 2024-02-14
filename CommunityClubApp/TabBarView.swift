@@ -29,12 +29,11 @@ struct TabBarView: View {
                     }
                     .tag(2)
                 
-                ThirdView()
-                    .tabItem {
-                        Label("Profile", systemImage: "person.crop.circle.fill")
-                    }
-                    .tag(3)
-                
+                ThirdView(userProfile: userProfile) // Correctly passing userProfile here
+                               .tabItem {
+                                   Label("Profile", systemImage: "person.crop.circle.fill")
+                               }
+                               .tag(3)
 //                Button(action: {
 //                    showingThirdViewSheet = true
 //                }) {
