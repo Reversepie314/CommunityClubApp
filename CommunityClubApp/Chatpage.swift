@@ -2,6 +2,8 @@
 
  
 import SwiftUI
+ 
+
 
 class UserProfile: ObservableObject {
     @Published var name: String = ""
@@ -10,7 +12,11 @@ class UserProfile: ObservableObject {
     @Published var otherInfo: String = ""
 }
 
+
+
 struct CreateCommunityPage: View {
+    
+    
     @StateObject var userProfile = UserProfile()
     @State private var selectedTab = 1
 
@@ -28,11 +34,11 @@ struct CreateCommunityPage: View {
                 }
                 .tag(2)
 
-            ThirdView()
-                .tabItem {
-                    Label("Profile", systemImage: "person.crop.circle.fill")
-                }
-                .tag(3)
+            ThirdView(userProfile: userProfile) // Correctly passing userProfile here
+                           .tabItem {
+                               Label("Profile", systemImage: "person.crop.circle.fill")
+                           }
+                           .tag(3)               
         }
     }
 }
@@ -53,8 +59,10 @@ struct FirstView: View {
         searchTextActiveChat.isEmpty ? activeChatImages : activeChatImages.filter { $0.contains(searchTextActiveChat) }
     }
     @State private var showCreateStudentPage = false
+    
 
     var body: some View {
+        
         NavigationView {
             VStack {
                 HStack {
@@ -70,13 +78,15 @@ struct FirstView: View {
                             .padding(9)
                     }
                 }
-
-                HStack {
-                    Text("Chat")
-                        .font(.system(size: 20, weight: .medium, design: .default))
-                        .padding(.leading)
-                    Spacer()
-                }
+                
+                
+                    HStack {
+                        Text("Chat")
+                            .font(.system(size: 20, weight: .medium, design: .default))
+                            .padding(.leading)
+                        Spacer()
+                    }
+                
 
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
@@ -99,106 +109,162 @@ struct FirstView: View {
                     }
                 }
 
-                HStack {
-                    Text("Active Chats")
-                        .font(.system(size: 20, weight: .medium, design: .default))
-                        .padding(.leading)
-                    Spacer()
-                }
+//                HStack {
+//                    Text("Active Chats")
+//                        .font(.system(size: 20, weight: .medium, design: .default))
+//                        .padding(.leading)
+//                    Spacer()
+//                }
 
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack {
-                        ForEach(filteredActiveChatImages, id: \.self) { imageName in
-                            NavigationLink(destination: ChatView(/* parameters if needed */)) {
-                                HStack {
-                                    Image(systemName: "person.crop.circle")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 50, height: 50)
-                                        .clipShape(Circle())
-                                        .overlay(Circle().stroke(Color.green, lineWidth: 2))
-                                    Text(" \(imageName)")
-                                    Spacer()
-                                    Image(systemName: "plus.circle.fill")
-                                        .foregroundColor(.blue)
-                                }
-                                .padding(.horizontal)
-                            }
-                        }
-                    }
-                }
+//                ScrollView(.vertical, showsIndicators: false) {
+//                    VStack {
+//                        ForEach(filteredActiveChatImages, id: \.self) { imageName in
+//                            NavigationLink(destination: ChatView(/* parameters if needed */)) {
+//                                HStack {
+//                                    Image(systemName: "person.crop.circle")
+//                                        .resizable()
+//                                        .scaledToFit()
+//                                        .frame(width: 50, height: 50)
+//                                        .clipShape(Circle())
+//                                        .overlay(Circle().stroke(Color.green, lineWidth: 2))
+//                                    Text(" \(imageName)")
+//                                    Spacer()
+//                                    Image(systemName: "plus.circle.fill")
+//                                        .foregroundColor(.blue)
+//                                }
+//                                .padding(.horizontal)
+//                            }
+//                        }
+//                    }
+//                }
             }
             .sheet(isPresented: $showCreateStudentPage) {
                 CreateStudentView(clubs: $clubs)
             }
         }
+        
     }
 }
 
 struct SecondView: View {
+    @State private var messageText = ""
+    @State private var savedNotes: [String] = []
+    
     var body: some View {
-        ZStack {
-            Text("Second View Content")
+        VStack {
+            Text("Notes Page")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .padding(.bottom, 20)
+            
+            
+            
+            
+            ZStack {
+                TextField("Add a note", text: $messageText)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(10)
+                
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        saveNote()
+                    }) {
+                        Image(systemName: "square.and.arrow.down")
+                    }
+                    .padding(.trailing, 10)
+                }
+            }
+            .padding()
+            
+            List {
+                ForEach(savedNotes, id: \.self) { note in
+                    Text(note)
+                }
+                .onDelete(perform: deleteNote)
+            }
         }
+        .padding()
+    }
+    
+    private func saveNote() {
+        guard !messageText.isEmpty else { return }
+        savedNotes.append(messageText)
+        messageText = ""
+    }
+    
+    private func deleteNote(at offsets: IndexSet) {
+        savedNotes.remove(atOffsets: offsets)
     }
 }
 
-struct ThirdView: View {
-    @EnvironmentObject var clubManagerVM: clubManager
 
+struct ThirdView: View  {
+    @ObservedObject var userProfile: UserProfile
     
     var body: some View {
         VStack {
             HStack {
                 Spacer()
                 Text("Profile")
-                    .font(.headline)
-                Spacer()
+                    .font(.largeTitle).fontWeight(.bold)
+                    .padding(.bottom, 5);                Spacer()
             }
             .padding()
-
             Divider()
-
-            VStack(alignment: .leading, spacing: 15) {
-                Image(systemName: "person.crop.circle.fill")
+            
+            VStack(spacing: 15) {
+                
+                Image("TimScott")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
                     .clipShape(Circle())
+                    .padding(.bottom, -20) // Adjust this value to move the image up or down
                     .padding()
-
-                TextField("Name", text: .constant(""))
+                
+                
+                
+                
+                
+                
+                
+                Divider()
+                Text("Name: Tim Scott \(userProfile.name)")
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                TextField("Primary Interest", text: .constant(""))
+                    .padding(.bottom, 0)
+                Divider()
+                Text("Primary Interest: Loves Cooking \(userProfile.primaryInterest)")
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                TextField("Secondary Interest", text: .constant(""))
+                    .padding(.bottom, 0)
+                Divider()
+                Text("Secondary Interest: Traveling \(userProfile.secondaryInterest)")
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                TextField("Other Info", text: .constant(""))
+                    .padding(.bottom, 0)
+                Divider()
+                Text("Other Info: Spending time with family. \(userProfile.otherInfo)")
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                    .padding(.bottom, 0)
+                Divider()
             }
             .padding()
-
-             
         }
     }
+    
+    
 }
-
-struct CreateCommunityPage_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateCommunityPage()
-        
-        .environmentObject(clubManager())
-
+    
+    
+    
+    
+    
+    struct CreateCommunityPage_Previews: PreviewProvider {
+        static var previews: some View {
+            CreateCommunityPage()
+                .environmentObject(clubManager())
+            
+        }
     }
-}
+    
+

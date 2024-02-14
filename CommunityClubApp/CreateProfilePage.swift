@@ -16,7 +16,13 @@ struct CreateProfileView: View {
 
     var body: some View {
         NavigationView {
+            
+            
             VStack {
+                Spacer()
+                Text("Create Profile")
+                    .font(.largeTitle).fontWeight(.bold)
+                    .padding(.bottom, 20)
                 TextField("Name", text: $name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()

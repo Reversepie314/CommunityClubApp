@@ -124,7 +124,7 @@ struct ChatView: View {
     }
     
     private func receiveRandomResponse() {
-        let responses = [" Sure, what do you need help with?", "😂 That's hilarious!", "I totally agree.", "Have you tried restarting it?", "Let's meet up and discuss.", "Bye", "Hello, How can I help you"]
+        let responses = [" Sure, what do you need help with?", "😂 That's hilarious!", "I totally agree.", "Have you tried restarting it?", "Let's meet up and discuss.", "Bye", "Hello, How can I help you", "let's have a group study"]
         if let randomResponse = responses.randomElement() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 self.messages.append(Message(content: randomResponse, isCurrentUser: false))

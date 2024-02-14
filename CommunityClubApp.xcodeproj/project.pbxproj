@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344A9E102B7D1210007345EB /* ListSectionChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344A9E0F2B7D1210007345EB /* ListSectionChatsView.swift */; };
 		344D43752B71260C00E34641 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D43742B71260C00E34641 /* TabBarView.swift */; };
 		344D43772B712CDC00E34641 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D43762B712CDC00E34641 /* ChatView.swift */; };
 		3456684A2B63FD1100C5735F /* CommunityClubAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345668492B63FD1100C5735F /* CommunityClubAppApp.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		344A9E0F2B7D1210007345EB /* ListSectionChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectionChatsView.swift; sourceTree = "<group>"; };
 		344D43742B71260C00E34641 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		344D43762B712CDC00E34641 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		345668462B63FD1100C5735F /* CommunityClubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityClubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 				3456684B2B63FD1100C5735F /* ContentView.swift */,
 				3456684D2B63FD1100C5735F /* Item.swift */,
 				34AE355D2B6AA2100038D506 /* Chatpage.swift */,
+				344A9E0F2B7D1210007345EB /* ListSectionChatsView.swift */,
 				344D43742B71260C00E34641 /* TabBarView.swift */,
 				34E18C332B6D33BF00E5456A /* SearchPage.swift */,
 				34E18C312B6D320B00E5456A /* CreateProfilePage.swift */,
@@ -200,6 +203,7 @@
 				34E18C322B6D320B00E5456A /* CreateProfilePage.swift in Sources */,
 				34AE355E2B6AA2100038D506 /* Chatpage.swift in Sources */,
 				344D43772B712CDC00E34641 /* ChatView.swift in Sources */,
+				344A9E102B7D1210007345EB /* ListSectionChatsView.swift in Sources */,
 				3456684E2B63FD1100C5735F /* Item.swift in Sources */,
 				3462523B2B752D180064CBBF /* CreateStudentPage.swift in Sources */,
 				346252392B751ABD0064CBBF /* ClubCreationPage.swift in Sources */,

@@ -29,9 +29,9 @@ struct CommunityClubAppApp: App {
     var body: some Scene {
         WindowGroup {
              
-                       CreateProfileView()
-                           .environmentObject(UserProfile()) // Initialize UserProfile here
-                   
+//                       CreateProfileView()
+//                           .environmentObject(UserProfile()) // Initialize UserProfile here
+//                   
             
             
             
