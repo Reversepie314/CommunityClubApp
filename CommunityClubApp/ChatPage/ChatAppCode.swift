@@ -3,6 +3,7 @@ import SwiftUI
 
 struct MessageCell: View {
     var message: Message
+    @EnvironmentObject var chatManagerVM:DataSource
     
     var body: some View {
         HStack {

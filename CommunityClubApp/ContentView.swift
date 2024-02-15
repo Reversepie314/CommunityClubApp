@@ -14,11 +14,30 @@ struct ContentView: View {
 
                 VStack {
                     Spacer()
-                    Text("Community Club")
-                        .font(.system(size: 50, weight: .medium, design: .rounded))//.background(Color.green)                        /*.font(.largeTitle)*/
-                        .foregroundColor(.white)
-                        .padding()
-
+                    ZStack {
+                        
+                        
+                        
+                        
+                        Rectangle()
+                            .fill(Color.black) // Set the background color for the square
+                            .frame(width: 375, height: 325)
+                            .opacity(0.8)//
+                        
+                        
+                        
+                      //  Spacer()
+                        Text("Community Club")
+                            .font(.system(size: 50, weight: .medium, design: .rounded))
+                    }
+                
+                    
+                    
+                    
+                    //.background(Color.green)                        /*.font(.largeTitle)*/
+                            .foregroundColor(.white)
+                            .padding()
+                    
                     NavigationLink(destination: SearchPage()) {
                         Text("Get Started")
                             .font(.headline)

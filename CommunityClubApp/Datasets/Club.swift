@@ -16,13 +16,35 @@ struct Club: Identifiable {
 }
 
 
-struct Student {
+struct Student:Hashable {
     
     var name:String
     var interests:String
     var interestInNote:String
     var Image: String
     var clubRef:Int
+    
+    
+    
+    // Implement Equatable conformance
+    static func == (lhs: Student, rhs: Student) -> Bool {
+        return lhs.clubRef == rhs.clubRef
+            && lhs.name == rhs.name
+            && lhs.interests == rhs.interests
+        && lhs.Image == rhs.Image
+        && lhs.interestInNote == rhs.interestInNote
+         
+    }
+
+    // Implement Hashable conformance
+    func hash(into hasher: inout Hasher) {
+     
+        hasher.combine(name)
+        hasher.combine(interests)
+        hasher.combine(interestInNote)
+        hasher.combine(Image)
+        hasher.combine(clubRef)
+    }
     
 }
 

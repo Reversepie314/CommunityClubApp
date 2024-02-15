@@ -93,12 +93,13 @@ import SwiftUI
 struct ChatView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var messageText = ""
-    @State private var messages: [Message] = DataSource.messages
+//   @State private var messages: [Message] = DataSource.messages
+    @EnvironmentObject var chatManagerVM:DataSource
 
     var body: some View {
         NavigationView {
             VStack {
-                List(messages) { message in
+                List(chatManagerVM.messages) { message in
                     MessageCell(message: message)
                 }
                 
@@ -115,8 +116,8 @@ struct ChatView: View {
     }
 
     private func sendMessage(content: String) {
-        let newMessage = Message(content: content, isCurrentUser: true)
-        messages.append(newMessage)
+        let newMessage = Message(content: messageText, student: chatManagerVM.currentStudent, isCurrentUser: true)
+        chatManagerVM.messages.append(newMessage)
         messageText = ""
         
         // Simulate a reply
@@ -127,7 +128,7 @@ struct ChatView: View {
         let responses = [" Sure, what do you need help with?", "😂 That's hilarious!", "I totally agree.", "Have you tried restarting it?", "Let's meet up and discuss.", "Bye", "Hello, How can I help you", "let's have a group study"]
         if let randomResponse = responses.randomElement() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.messages.append(Message(content: randomResponse, isCurrentUser: false))
+                chatManagerVM.messages.append(Message(content: randomResponse, student: chatManagerVM.currentStudent, isCurrentUser: false))
             }
         }
     }
@@ -136,5 +137,6 @@ struct ChatView: View {
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView()
+            .environmentObject(DataSource())
     }
 }
