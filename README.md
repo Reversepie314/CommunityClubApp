@@ -20,6 +20,12 @@ Through collaborative efforts and effective role allocation, the team successful
 
 This read.me serves as a brief overview of the Community Club App case study, highlighting its purpose, features, team composition, and ultimate objective of promoting community engagement within the college campus environment.
 
+## Demo 
+
+
+
+
+https://github.com/Reversepie314/CommunityClubApp/assets/148349213/3badb931-4e76-4d3d-aad2-76456fdca1a9
 
 
 
