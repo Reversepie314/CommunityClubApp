@@ -104,6 +104,11 @@ struct ChatView: View {
                 }
                 
                 HStack {
+                    Button{
+                    }label:{
+                        
+                        Image (systemName: "plus.circle")
+                    }
                     TextField("Type a message...", text: $messageText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     Button("Send") {
