@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344A9E102B7D1210007345EB /* ListSectionChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344A9E0F2B7D1210007345EB /* ListSectionChatsView.swift */; };
 		344D43752B71260C00E34641 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D43742B71260C00E34641 /* TabBarView.swift */; };
 		344D43772B712CDC00E34641 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344D43762B712CDC00E34641 /* ChatView.swift */; };
 		3456684A2B63FD1100C5735F /* CommunityClubAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345668492B63FD1100C5735F /* CommunityClubAppApp.swift */; };
@@ -14,9 +15,12 @@
 		3456684E2B63FD1100C5735F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3456684D2B63FD1100C5735F /* Item.swift */; };
 		345668502B63FD1200C5735F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3456684F2B63FD1200C5735F /* Assets.xcassets */; };
 		345668532B63FD1200C5735F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 345668522B63FD1200C5735F /* Preview Assets.xcassets */; };
-		346252372B75109D0064CBBF /* Classmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346252362B75109D0064CBBF /* Classmodel.swift */; };
+		346252372B75109D0064CBBF /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346252362B75109D0064CBBF /* Club.swift */; };
 		346252392B751ABD0064CBBF /* ClubCreationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346252382B751ABD0064CBBF /* ClubCreationPage.swift */; };
 		3462523B2B752D180064CBBF /* CreateStudentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3462523A2B752D180064CBBF /* CreateStudentPage.swift */; };
+		346E158F2B79EFB00026B502 /* ChatAppCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346E158E2B79EFB00026B502 /* ChatAppCode.swift */; };
+		346E15912B79F23B0026B502 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346E15902B79F23B0026B502 /* Message.swift */; };
+		346E15932B79F2A20026B502 /* dummiedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346E15922B79F2A20026B502 /* dummiedata.swift */; };
 		34AE355C2B6A995B0038D506 /* CreateClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE355B2B6A995B0038D506 /* CreateClub.swift */; };
 		34AE355E2B6AA2100038D506 /* Chatpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE355D2B6AA2100038D506 /* Chatpage.swift */; };
 		34E18C322B6D320B00E5456A /* CreateProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E18C312B6D320B00E5456A /* CreateProfilePage.swift */; };
@@ -24,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		344A9E0F2B7D1210007345EB /* ListSectionChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectionChatsView.swift; sourceTree = "<group>"; };
 		344D43742B71260C00E34641 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		344D43762B712CDC00E34641 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		345668462B63FD1100C5735F /* CommunityClubApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityClubApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,9 +37,12 @@
 		3456684D2B63FD1100C5735F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3456684F2B63FD1200C5735F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		345668522B63FD1200C5735F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		346252362B75109D0064CBBF /* Classmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classmodel.swift; sourceTree = "<group>"; };
+		346252362B75109D0064CBBF /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
 		346252382B751ABD0064CBBF /* ClubCreationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCreationPage.swift; sourceTree = "<group>"; };
 		3462523A2B752D180064CBBF /* CreateStudentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentPage.swift; sourceTree = "<group>"; };
+		346E158E2B79EFB00026B502 /* ChatAppCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppCode.swift; sourceTree = "<group>"; };
+		346E15902B79F23B0026B502 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		346E15922B79F2A20026B502 /* dummiedata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummiedata.swift; sourceTree = "<group>"; };
 		34AE35542B6941B00038D506 /* CommunityClubApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommunityClubApp.entitlements; sourceTree = "<group>"; };
 		34AE355B2B6A995B0038D506 /* CreateClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClub.swift; sourceTree = "<group>"; };
 		34AE355D2B6AA2100038D506 /* Chatpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatpage.swift; sourceTree = "<group>"; };
@@ -81,6 +89,7 @@
 				3456684B2B63FD1100C5735F /* ContentView.swift */,
 				3456684D2B63FD1100C5735F /* Item.swift */,
 				34AE355D2B6AA2100038D506 /* Chatpage.swift */,
+				344A9E0F2B7D1210007345EB /* ListSectionChatsView.swift */,
 				344D43742B71260C00E34641 /* TabBarView.swift */,
 				34E18C332B6D33BF00E5456A /* SearchPage.swift */,
 				34E18C312B6D320B00E5456A /* CreateProfilePage.swift */,
@@ -103,7 +112,7 @@
 			children = (
 				346252382B751ABD0064CBBF /* ClubCreationPage.swift */,
 				34AE355B2B6A995B0038D506 /* CreateClub.swift */,
-				346252362B75109D0064CBBF /* Classmodel.swift */,
+				346252362B75109D0064CBBF /* Club.swift */,
 				3462523A2B752D180064CBBF /* CreateStudentPage.swift */,
 			);
 			path = Datasets;
@@ -112,6 +121,9 @@
 		3462523E2B7539320064CBBF /* ChatPage */ = {
 			isa = PBXGroup;
 			children = (
+				346E15922B79F2A20026B502 /* dummiedata.swift */,
+				346E15902B79F23B0026B502 /* Message.swift */,
+				346E158E2B79EFB00026B502 /* ChatAppCode.swift */,
 				344D43762B712CDC00E34641 /* ChatView.swift */,
 			);
 			path = ChatPage;
@@ -191,14 +203,18 @@
 				34E18C322B6D320B00E5456A /* CreateProfilePage.swift in Sources */,
 				34AE355E2B6AA2100038D506 /* Chatpage.swift in Sources */,
 				344D43772B712CDC00E34641 /* ChatView.swift in Sources */,
+				344A9E102B7D1210007345EB /* ListSectionChatsView.swift in Sources */,
 				3456684E2B63FD1100C5735F /* Item.swift in Sources */,
 				3462523B2B752D180064CBBF /* CreateStudentPage.swift in Sources */,
 				346252392B751ABD0064CBBF /* ClubCreationPage.swift in Sources */,
-				346252372B75109D0064CBBF /* Classmodel.swift in Sources */,
+				346252372B75109D0064CBBF /* Club.swift in Sources */,
 				34AE355C2B6A995B0038D506 /* CreateClub.swift in Sources */,
 				34E18C342B6D33BF00E5456A /* SearchPage.swift in Sources */,
 				344D43752B71260C00E34641 /* TabBarView.swift in Sources */,
+				346E15932B79F2A20026B502 /* dummiedata.swift in Sources */,
+				346E158F2B79EFB00026B502 /* ChatAppCode.swift in Sources */,
 				3456684A2B63FD1100C5735F /* CommunityClubAppApp.swift in Sources */,
+				346E15912B79F23B0026B502 /* Message.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
