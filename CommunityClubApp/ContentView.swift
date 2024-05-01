@@ -38,7 +38,7 @@ struct ContentView: View {
                             .foregroundColor(.white)
                             .padding()
                     
-                    NavigationLink(destination: SearchPage()) {
+                    NavigationLink(destination: SearchImageView()) {
                         Text("Get Started")
                             .font(.headline)
                             .foregroundColor(.white)
