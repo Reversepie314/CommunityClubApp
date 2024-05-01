@@ -2,7 +2,7 @@
 
  
 import SwiftUI
- 
+
 
 
 class UserProfile: ObservableObject {
@@ -43,108 +43,173 @@ struct CreateCommunityPage: View {
     }
 }
 
+import SwiftUI
+import PhotosUI
+
+// Assuming Club and UserProfile are defined in your model
 struct FirstView: View {
     @State var clubs = Club.all
     @ObservedObject var userProfile: UserProfile
     @State private var searchTextChat = ""
     @State private var searchTextActiveChat = ""
-//    @State private var chatImages = ["Wayne State Connect", "Art Club", "Wayne State Sports", "Wayne State Help", "Wayne State Track", "Wayne State Swim","Wayne State Football"]
     @State private var activeChatImages = ["Squirrel Watching Club", "Late Night Movie Club", "Helping Freshman Club", "Bible Study Club"]
-    
-    var filteredClubs: [Club] {
-        searchTextActiveChat.isEmpty ? clubs : clubs.filter { $0.name.contains(searchTextActiveChat) }
-    }
-
-    var filteredActiveChatImages: [String] {
-        searchTextActiveChat.isEmpty ? activeChatImages : activeChatImages.filter { $0.contains(searchTextActiveChat) }
-    }
     @State private var showCreateStudentPage = false
+    @State private var showAddPhoto = false
+    @State private var selectedImage: UIImage?
+    
     
 
     var body: some View {
-        
         NavigationView {
-            VStack {
-                HStack {
+            List {
+                Section(header: Text("Chats").font(.headline)) {
                     TextField("Search Chats", text: $searchTextChat)
-                        .padding()
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-                        .padding()
-                    Button {
+                        .padding(.vertical, 8)
+                        .listRowBackground(Color(.systemGray6))
+                    
+                    ForEach(filteredClubs) { club in
+                        NavigationLink(destination: ChatView()) {
+                            ChatRow(club: club)
+                        }
+                    }
+                    Button(action: {
                         showCreateStudentPage = true
-                    } label: {
-                        Image(systemName: "plus")
-                            .padding(9)
-                    }
-                }
-                
-                
-                    HStack {
-                        Text("Chat")
-                            .font(.system(size: 20, weight: .medium, design: .default))
-                            .padding(.leading)
-                        Spacer()
-                    }
-                
-
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack {
-                        ForEach(filteredClubs) { club in
-                            NavigationLink(destination: ChatView(/* parameters if needed */)) {
-                                HStack {
-                                    Image(club.imageName) // This requires actual images named accordingly in your assets
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 50, height: 50)
-                                        .clipShape(Circle())
-                                        .overlay(Circle().stroke(Color.blue, lineWidth: 2))
-                                    Text(club.name)
-                                    Spacer()
-                                }
-                                .padding(.top, 1)
-                                .navigationBarTitle("")
-                            }
+                    }) {
+                        HStack {
+                            Image(systemName: "plus")
+                            Text("Add New Chat")
                         }
                     }
                 }
-
-//                HStack {
-//                    Text("Active Chats")
-//                        .font(.system(size: 20, weight: .medium, design: .default))
-//                        .padding(.leading)
-//                    Spacer()
-//                }
-
-//                ScrollView(.vertical, showsIndicators: false) {
-//                    VStack {
-//                        ForEach(filteredActiveChatImages, id: \.self) { imageName in
-//                            NavigationLink(destination: ChatView(/* parameters if needed */)) {
-//                                HStack {
-//                                    Image(systemName: "person.crop.circle")
-//                                        .resizable()
-//                                        .scaledToFit()
-//                                        .frame(width: 50, height: 50)
-//                                        .clipShape(Circle())
-//                                        .overlay(Circle().stroke(Color.green, lineWidth: 2))
-//                                    Text(" \(imageName)")
-//                                    Spacer()
-//                                    Image(systemName: "plus.circle.fill")
-//                                        .foregroundColor(.blue)
-//                                }
-//                                .padding(.horizontal)
-//                            }
-//                        }
-//                    }
-//                }
+                
+                Section(header: Text("Active Chats").font(.headline)) {
+                    ForEach(filteredActiveChatImages, id: \.self) { imageName in
+                        NavigationLink(destination: ChatView()) {
+                            ActiveChatRow(imageName: imageName, image: selectedImage)
+                        }
+                    }
+                    Button(action: {
+                        showAddPhoto = true
+                    }) {
+                        HStack {
+                            Image(systemName: "camera")
+                            Text("Add Photo to Chat")
+                        }
+                    }
+                }
+            }
+            .listStyle(GroupedListStyle())
+            .navigationTitle("Clubs & Chats")
+            .toolbar {
+                Button(action: {
+                    showCreateStudentPage = true
+                }) {
+                    Image(systemName: "plus")
+                }
             }
             .sheet(isPresented: $showCreateStudentPage) {
-                CreateStudentView(clubs: $clubs)
+                // CreateStudentView placeholder
+                CreateStudentView(clubs:$clubs)
+            }
+            .sheet(isPresented: $showAddPhoto) {
+                ImagePicker2(selectedImage: $selectedImage, sourceType: .photoLibrary)
             }
         }
-        
+    }
+    
+    var filteredClubs: [Club] {
+        searchTextChat.isEmpty ? clubs : clubs.filter { $0.name.contains(searchTextChat) }
+    }
+    
+    var filteredActiveChatImages: [String] {
+        searchTextActiveChat.isEmpty ? activeChatImages : activeChatImages.filter { $0.contains(searchTextActiveChat) }
     }
 }
+
+struct ChatRow: View {
+    var club: Club
+    
+    var body: some View {
+        HStack {
+            Image(club.imageName) // Assuming imageName is a valid asset
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.blue, lineWidth: 2))
+            Text(club.name)
+            Spacer()
+        }
+    }
+}
+
+struct ActiveChatRow: View {
+    var imageName: String
+    var image: UIImage?
+    
+    var body: some View {
+        HStack {
+            if let image = image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.green, lineWidth: 2))
+            } else {
+                Image(systemName: "person.crop.circle")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 50, height: 50)
+                    .clipShape(Circle())
+                    .overlay(Circle().stroke(Color.green, lineWidth: 2))
+            }
+            Text(imageName)
+            Spacer()
+        }
+    }
+}
+
+struct ImagePicker2: UIViewControllerRepresentable {
+    @Binding var selectedImage: UIImage?
+    var sourceType: UIImagePickerController.SourceType
+    
+    func makeUIViewController(context: Context) -> UIImagePickerController {
+        let picker = UIImagePickerController()
+        picker.sourceType = sourceType
+        picker.delegate = context.coordinator
+        return picker
+    }
+    
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        var parent: ImagePicker2
+        
+        init(_ parent: ImagePicker2) {
+            self.parent = parent
+        }
+        
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let image = info[.originalImage] as? UIImage {
+                parent.selectedImage = image
+            }
+            picker.dismiss(animated: true)
+        }
+    }
+}
+//
+//
+//// Assume Club and UserProfile are defined elsewhere, as well as ChatView and CreateStudentView
+ 
+///
+///
+///
+///
 
 struct SecondView: View {
     @State private var messageText = ""
@@ -263,7 +328,8 @@ struct ThirdView: View  {
         static var previews: some View {
             CreateCommunityPage()
                 .environmentObject(clubManager())
-            
+                .environmentObject(DataSource())
+
         }
     }
     

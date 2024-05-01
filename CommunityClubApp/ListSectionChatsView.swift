@@ -9,7 +9,18 @@ import SwiftUI
 
 struct ListSectionChatsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List{
+           Section("Active Chats") {
+                Text("Bible Study Group")
+            }
+            
+            Section("Other Chats") {
+            HStack{
+                Image(systemName: "star.fill")
+                Text("Wayne State Squirrel Feeding Club")
+            }
+            }
+        }
     }
 }
 

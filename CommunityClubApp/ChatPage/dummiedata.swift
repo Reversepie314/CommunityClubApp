@@ -24,18 +24,33 @@
 
 import Foundation
 
-struct DataSource {
-    static let messages = [
-        Message(content: "Hey! Are you going to the club meeting tonight?", isCurrentUser: false),
-        Message(content: "Yeah, I'll be there. Any idea what we're discussing?", isCurrentUser: true),
-        Message(content: "I heard we're planning a community service project. Sounds like a great opportunity to make an impact.", isCurrentUser: false),
-        Message(content: "Definitely. I've got some thoughts on that. We'll talk more at the meeting.", isCurrentUser: true),
-        Message(content: "By the way, did you get a chance to look at the project proposal for our group?", isCurrentUser: false),
-        Message(content: "Still working on it, but I'll send over the draft soon. Could you review it for me?", isCurrentUser: true),
-        Message(content: "Sure thing, happy to help. Also, are we on for studying this weekend?", isCurrentUser: false),
-        Message(content: "Absolutely. Booked the study room for us on Saturday at 10. Sound good?", isCurrentUser: true),
-        Message(content: "Perfect! Looking forward to both the meeting and our study session. Catch you later!", isCurrentUser: false),
-        Message(content: "Great, see you then!", isCurrentUser: true)
-    ]
+class DataSource:ObservableObject {
+    
+    
+    @Published var studentsInChat:[Student] = []
+    @Published var currentStudent:Student = Student(name: "", interests: "", interestInNote: "", Image: "", clubRef: 0)
+    @Published var message:String = ""
+    @Published var messages:[Message] = []
+//        Message(content: "Hey! Are you going to the club meeting tonight?", isCurrentUser: false),
+//        Message(content: "Yeah, I'll be there. Any idea what we're discussing?", isCurrentUser: true),
+//        Message(content: "I heard we're planning a community service project. Sounds like a great opportunity to make an impact.", isCurrentUser: false),
+//        Message(content: "Definitely. I've got some thoughts on that. We'll talk more at the meeting.", isCurrentUser: true),
+//        Message(content: "By the way, did you get a chance to look at the project proposal for our group?", isCurrentUser: false),
+//        Message(content: "Still working on it, but I'll send over the draft soon. Could you review it for me?", isCurrentUser: true),
+//        Message(content: "Sure thing, happy to help. Also, are we on for studying this weekend?", isCurrentUser: false),
+//        Message(content: "Absolutely. Booked the study room for us on Saturday at 10. Sound good?", isCurrentUser: true),
+//        Message(content: "Perfect! Looking forward to both the meeting and our study session. Catch you later!", isCurrentUser: self.currentStudent),
+//        Message(content: "Great, see you then!", student: currentStudent)
+
+    
+    
+    
+    
+    func createMessage(student:Student, messageContent:String) {
+        
+        
+        let newMessage = Message(content: messageContent, student: student, isCurrentUser: true)
+        messages.append(newMessage)
+    }
 }
 
